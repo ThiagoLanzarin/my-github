@@ -1,11 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Git & GitHub - Guia Completo</title>
+    <link rel="stylesheet" href="global.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                    <circle cx="18" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <path d="m18 9-12 12"></path>
+                </svg>
+                <div>
+                    <h1>Git & GitHub</h1>
+                    <p>Guia completo para controle de versão e colaboração</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="nav-buttons">
+            <button class="nav-btn" data-section="conceitos">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span>Conceitos de Git e Github</span>
+            </button>
+            
+            <button class="nav-btn" data-section="fluxo">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <path d="m9 9 3 3-3 3"></path>
+                    <path d="m15 15-3-3 3-3"></path>
+                </svg>
+                <span>Fluxo de git/github</span>
+            </button>
+            
+            <button class="nav-btn" data-section="resolucao-conflitos">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Como resolver conflitos</span>
+            </button>
+        </div>
+
+        <div id="content-area">
+            <div id="default-content" class="content-section active">
+                <div class="card text-center">
+                    <svg class="welcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16,18 22,12 16,6"></polyline>
+                        <polyline points="8,6 2,12 8,18"></polyline>
+                    </svg>
+                    <h3>Bem-vindo ao Guia Git & GitHub</h3>
+                    <p>Selecione um dos botões acima para explorar os conceitos, fluxos de trabalho e soluções para conflitos no Git e GitHub.</p>
+                </div>
+            </div>
+
+            <div id="conceitos-content" class="content-section">
+                <div class="section-header">
+                    <h2>Conceitos de Git e GitHub</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>
+                                <svg class="card-icon primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                                    <circle cx="18" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <path d="m18 9-12 12"></path>
+                                </svg>
+                                Git
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Git é um sistema de controle de versão distribuído que permite rastrear mudanças no código fonte durante o desenvolvimento de software. Ele mantém um histórico completo de todas as alterações feitas nos arquivos.</p>
+                            <ul class="feature-list">
+                                <li><span class="bullet primary"></span>Controle de versão local e distribuído</li>
+                                <li><span class="bullet primary"></span>Rastreamento de mudanças em arquivos</li>
+                                <li><span class="bullet primary"></span>Histórico completo de commits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>
+                                <svg class="card-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M12 1v6m0 6v6"></path>
+                                    <path d="m21 12-6-6-6 6-6-6"></path>
+                                </svg>
+                                GitHub
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <p>GitHub é uma plataforma de hospedagem de código que utiliza Git para controle de versão. Oferece recursos colaborativos como pull requests, issues e wikis para facilitar o trabalho em equipe.</p>
+                            <ul class="feature-list">
+                                <li><span class="bullet accent"></span>Hospedagem de repositórios Git</li>
+                                <li><span class="bullet accent"></span>Ferramentas de colaboração</li>
+                                <li><span class="bullet accent"></span>Interface web intuitiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Comandos Básicos do Git</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="commands-grid">
+                            <div class="command-group">
+                                <div class="command-item">
+                                    <code>git init</code>
+                                    <p>Inicializa um repositório Git</p>
+                                </div>
+                                <div class="command-item">
+                                    <code>git add .</code>
+                                    <p>Adiciona arquivos ao staging</p>
+                                </div>
+                                <div class="command-item">
+                                    <code>git commit -m "mensagem"</code>
+                                    <p>Cria um commit com mensagem</p>
+                                </div>
+                            </div>
+                            <div class="command-group">
+                                <div class="command-item">
+                                    <code>git push</code>
+                                    <p>Envia commits para o repositório remoto</p>
+                                </div>
+                                <div class="command-item">
+                                    <code>git pull</code>
+                                    <p>Baixa e mescla mudanças do remoto</p>
+                                </div>
+                                <div class="command-item">
+                                    <code>git status</code>
+                                    <p>Mostra o status dos arquivos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fluxo-content" class="content-section">
+                <div class="section-header">
+                    <h2>Fluxo de Git/GitHub</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Fluxo de Trabalho Típico</h3>
+                        <p class="card-description">Entenda o processo completo desde a criação até a publicação do código</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="workflow-steps">
+                            <div class="workflow-step">
+                                <div class="step-number primary">1</div>
+                                <div class="step-content">
+                                    <h4>Clone ou Fork</h4>
+                                    <p>Clone o repositório ou faça um fork para sua conta</p>
+                                    <code>git clone &lt;url-do-repositorio&gt;</code>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number primary">2</div>
+                                <div class="step-content">
+                                    <h4>Criar Branch</h4>
+                                    <p>Crie uma nova branch para sua feature ou correção</p>
+                                    <code>git checkout -b nome-da-branch</code>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number primary">3</div>
+                                <div class="step-content">
+                                    <h4>Fazer Alterações</h4>
+                                    <p>Edite os arquivos necessários e teste suas mudanças</p>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number primary">4</div>
+                                <div class="step-content">
+                                    <h4>Commit</h4>
+                                    <p>Adicione e faça commit das suas alterações</p>
+                                    <div class="code-block">
+                                        <code>git add .</code>
+                                        <code>git commit -m "Descrição clara da mudança"</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number primary">5</div>
+                                <div class="step-content">
+                                    <h4>Push</h4>
+                                    <p>Envie sua branch para o GitHub</p>
+                                    <code>git push origin nome-da-branch</code>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number accent">6</div>
+                                <div class="step-content">
+                                    <h4>Pull Request</h4>
+                                    <p>Crie um Pull Request no GitHub para revisar e mesclar suas mudanças</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Boas Práticas</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="practices-grid">
+                            <ul class="practice-list">
+                                <li><span class="bullet accent"></span>Use mensagens de commit descritivas</li>
+                                <li><span class="bullet accent"></span>Faça commits pequenos e frequentes</li>
+                                <li><span class="bullet accent"></span>Sempre teste antes de fazer push</li>
+                            </ul>
+                            <ul class="practice-list">
+                                <li><span class="bullet accent"></span>Use branches para features</li>
+                                <li><span class="bullet accent"></span>Mantenha o histórico limpo</li>
+                                <li><span class="bullet accent"></span>Documente mudanças importantes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conflitos-content" class="content-section">
+                <div class="section-header">
+                    <h2>Como Resolver Conflitos</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <svg class="card-icon destructive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            O que são Conflitos?
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Conflitos ocorrem quando o Git não consegue automaticamente mesclar mudanças de diferentes branches ou commits. Isso acontece quando as mesmas linhas de código foram modificadas de formas diferentes.</p>
+                        <div class="info-box">
+                            <h5>Situações Comuns:</h5>
+                            <ul>
+                                <li>• Duas pessoas editaram a mesma linha</li>
+                                <li>• Um arquivo foi deletado em uma branch e modificado em outra</li>
+                                <li>• Mudanças conflitantes em merge ou rebase</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Passo a Passo para Resolver</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="conflict-steps">
+                            <div class="conflict-step">
+                                <div class="step-number destructive">1</div>
+                                <div class="step-content">
+                                    <h4>Identificar o Conflito</h4>
+                                    <p>O Git mostrará uma mensagem de erro indicando arquivos em conflito</p>
+                                    <code>git status</code>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">2</div>
+                                <div class="step-content">
+                                    <h4>Abrir o Arquivo</h4>
+                                    <p>Abra o arquivo conflitante em seu editor. Você verá marcadores como:</p>
+                                    <div class="conflict-example">
+                                        <div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div>
+                                        <div class="primary-text">Seu código atual</div>
+                                        <div>=======</div>
+                                        <div class="accent-text">Código da outra branch</div>
+                                        <div>&gt;&gt;&gt;&gt;&gt;&gt;&gt; nome-da-branch</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">3</div>
+                                <div class="step-content">
+                                    <h4>Resolver Manualmente</h4>
+                                    <p>Edite o arquivo removendo os marcadores e mantendo o código correto</p>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">4</div>
+                                <div class="step-content">
+                                    <h4>Marcar como Resolvido</h4>
+                                    <p>Adicione o arquivo resolvido ao staging</p>
+                                    <code>git add nome-do-arquivo</code>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number accent">5</div>
+                                <div class="step-content">
+                                    <h4>Finalizar</h4>
+                                    <p>Complete o merge ou continue o rebase</p>
+                                    <code>git commit</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ferramentas Úteis</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="tools-grid">
+                            <div class="tool-section">
+                                <h5>Comandos Git</h5>
+                                <div class="tool-commands">
+                                    <div class="tool-item">
+                                        <code>git merge --abort</code>
+                                        <p>Cancela o merge</p>
+                                    </div>
+                                    <div class="tool-item">
+                                        <code>git rebase --abort</code>
+                                        <p>Cancela o rebase</p>
+                                    </div>
+                                    <div class="tool-item">
+                                        <code>git diff</code>
+                                        <p>Mostra diferenças</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-section">
+                                <h5>Editores Recomendados</h5>
+                                <ul class="editor-list">
+                                    <li><span class="bullet primary"></span>VS Code (extensão GitLens)</li>
+                                    <li><span class="bullet primary"></span>IntelliJ IDEA</li>
+                                    <li><span class="bullet primary"></span>Sublime Merge</li>
+                                    <li><span class="bullet primary"></span>GitKraken</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Guia educacional sobre Git e GitHub</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
