@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="global.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -24,6 +25,7 @@
         </div>
     </header>
 
+    <!-- Navigation Buttons -->
     <div class="container">
         <div class="nav-buttons">
             <button class="nav-btn" data-section="conceitos">
@@ -53,8 +55,9 @@
             </button>
         </div>
 
+        <!-- Content Sections -->
         <div id="content-area">
-            <!-- Conteúdo padrão -->
+            <!-- Default Content -->
             <div id="default-content" class="content-section active">
                 <div class="card text-center">
                     <svg class="welcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -66,7 +69,7 @@
                 </div>
             </div>
 
-            <!-- Conceitos -->
+            <!-- Conceitos Section -->
             <div id="conceitos-content" class="content-section">
                 <div class="section-header">
                     <h2>Conceitos de Git e GitHub</h2>
@@ -159,7 +162,7 @@
                 </div>
             </div>
 
-            <!-- Fluxo -->
+            <!-- Fluxo Section -->
             <div id="fluxo-content" class="content-section">
                 <div class="section-header">
                     <h2>Fluxo de Git/GitHub</h2>
@@ -173,7 +176,6 @@
                     </div>
                     <div class="card-content">
                         <div class="workflow-steps">
-                            <!-- Passos do fluxo -->
                             <div class="workflow-step">
                                 <div class="step-number primary">1</div>
                                 <div class="step-content">
@@ -227,7 +229,6 @@
                     </div>
                 </div>
 
-                <!-- Boas práticas -->
                 <div class="card">
                     <div class="card-header">
                         <h3>Boas Práticas</h3>
@@ -249,7 +250,7 @@
                 </div>
             </div>
 
-            <!-- Conflitos -->
+            <!-- Conflitos Section -->
             <div id="conflitos-content" class="content-section">
                 <div class="section-header">
                     <h2>Como Resolver Conflitos</h2>
@@ -290,102 +291,4 @@
                                 <div class="step-number destructive">1</div>
                                 <div class="step-content">
                                     <h4>Identificar o Conflito</h4>
-                                    <p>O Git mostrará uma mensagem de erro indicando arquivos em conflito</p>
-                                    <code>git status</code>
-                                </div>
-                            </div>
-
-                            <div class="conflict-step">
-                                <div class="step-number destructive">2</div>
-                                <div class="step-content">
-                                    <h4>Abrir o Arquivo</h4>
-                                    <p>Abra o arquivo conflitante em seu editor. Você verá marcadores como:</p>
-                                    <div class="conflict-example">
-                                        <div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div>
-                                        <div class="primary-text">Seu código atual</div>
-                                        <div>=======</div>
-                                        <div class="accent-text">Código da outra branch</div>
-                                        <div>&gt;&gt;&gt;&gt;&gt;&gt;&gt; nome-da-branch</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="conflict-step">
-                                <div class="step-number destructive">3</div>
-                                <div class="step-content">
-                                    <h4>Resolver Manualmente</h4>
-                                    <p>Edite o arquivo removendo os marcadores e mantendo o código correto</p>
-                                </div>
-                            </div>
-
-                            <div class="conflict-step">
-                                <div class="step-number destructive">4</div>
-                                <div class="step-content">
-                                    <h4>Marcar como Resolvido</h4>
-                                    <p>Adicione o arquivo resolvido ao staging</p>
-                                    <code>git add nome-do-arquivo</code>
-                                </div>
-                            </div>
-
-                            <div class="conflict-step">
-                                <div class="step-number accent">5</div>
-                                <div class="step-content">
-                                    <h4>Finalizar</h4>
-                                    <p>Complete o merge ou continue o rebase</p>
-                                    <code>git commit</code>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Ferramentas Úteis</h3>
-                    </div>
-                    <div class="card-content">
-                        <div class="tools-grid">
-                            <div class="tool-section">
-                                <h5>Comandos Git</h5>
-                                <div class="tool-commands">
-                                    <div class="tool-item">
-                                        <code>git merge --abort</code>
-                                        <p>Cancela o merge</p>
-                                    </div>
-                                    <div class="tool-item">
-                                        <code>git rebase --abort</code>
-                                        <p>Cancela o rebase</p>
-                                    </div>
-                                    <div class="tool-item">
-                                        <code>git diff</code>
-                                        <p>Mostra diferenças</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tool-section">
-                                <h5>Editores Recomendados</h5>
-                                <ul class="editor-list">
-                                    <li><span class="bullet primary"></span>VS Code (extensão GitLens)</li>
-                                    <li><span class="bullet primary"></span>IntelliJ IDEA</li>
-                                    <li><span class="bullet primary"></span>Sublime Merge</li>
-                                    <li><span class="bullet primary"></span>GitKraken</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>Guia educacional sobre Git e GitHub</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                                    <p>O Git mostrará
