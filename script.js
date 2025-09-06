@@ -1,34 +1,48 @@
-// Funcionalidade de navegação
+// Funcionalidade de navegação com melhorias
 document.addEventListener("DOMContentLoaded", () => {
-  const navButtons = document.querySelectorAll(".nav-btn")
-  const contentSections = document.querySelectorAll(".content-section")
-  const defaultContent = document.getElementById("default-content")
+  const navButtons = document.querySelectorAll(".nav-btn");
+  const contentSections = document.querySelectorAll(".content-section");
+  const defaultContent = document.getElementById("default-content");
 
-  navButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const sectionName = this.getAttribute("data-section")
-      const targetSection = document.getElementById(sectionName + "-content")
+  const hideAllSections = () => {
+    contentSections.forEach(section => {
+      section.classList.remove("active", "fade-in");
+    });
+  };
 
-      // Verifica se está clicando no mesmo botão (funcionalidade de alternância)
-      if (this.classList.contains("active")) {
-        // Esconde a seção atual e mostra o conteúdo padrão
-        contentSections.forEach((section) => section.classList.remove("active"))
-        defaultContent.classList.add("active")
-        navButtons.forEach((btn) => btn.classList.remove("active"))
-        return
+  const showSection = (section) => {
+    section.classList.add("active");
+    // Trigger reflow para animar
+    section.offsetWidth;
+    section.classList.add("fade-in");
+  };
+
+  navButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const sectionName = button.getAttribute("data-section");
+      const targetSection = document.getElementById(`${sectionName}-content`);
+
+      if (!targetSection) return; // evita erro se o id não existir
+
+      // Alternância: se o botão já estiver ativo, volta para conteúdo padrão
+      if (button.classList.contains("active")) {
+        hideAllSections();
+        showSection(defaultContent);
+        navButtons.forEach(btn => btn.classList.remove("active"));
+        return;
       }
 
-      // Esconde todas as seções
-      contentSections.forEach((section) => section.classList.remove("active"))
+      // Mostra a seção clicada
+      hideAllSections();
+      showSection(targetSection);
 
-      // Remove a classe ativa de todos os botões
-      navButtons.forEach((btn) => btn.classList.remove("active"))
+      // Atualiza classes ativas nos botões
+      navButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
 
-      // Mostra a seção alvo e ativa o botão
-      if (targetSection) {
-        targetSection.classList.add("active")
-        this.classList.add("active")
-      }
-    })
-  })
-})
+  // Inicializa mostrando o conteúdo padrão
+  hideAllSections();
+  showSection(defaultContent);
+});

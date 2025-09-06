@@ -6,20 +6,20 @@
 }
 
 :root {
-  /* Cores */
-  --primary: #2563eb;
+  /* Cores escuras */
+  --primary: #7c3aed; /* Roxo */
   --primary-foreground: #ffffff;
-  --accent: #7c3aed;
+  --accent: #9333ea; /* Roxo mais vibrante */
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
+  --background: #1e1e2f; /* Fundo escuro */
+  --foreground: #e0e0e0; /* Texto claro */
+  --card: #2a2a3d; /* Cards escuros */
+  --card-foreground: #e0e0e0;
+  --muted: #3a3a4e; /* Fundo leve para seções internas */
+  --muted-foreground: #c0c0c0;
+  --border: #4a4a60;
 
   /* Tipografia */
   --font-sans: system-ui, -apple-system, sans-serif;
@@ -96,6 +96,7 @@ body {
   transition: all 0.2s ease;
   font-family: inherit;
   font-size: 1rem;
+  color: var(--foreground);
 }
 
 .nav-btn:hover {
@@ -126,22 +127,15 @@ body {
 
 .content-section {
   display: none;
-  animation: fadeIn 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(1rem);
 }
 
 .content-section.active {
   display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-header {
@@ -168,6 +162,7 @@ body {
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  color: var(--card-foreground);
 }
 
 .card-header {
@@ -221,22 +216,23 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.commands-grid {
+.commands-grid,
+.practices-grid,
+.tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+}
+
+.commands-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .practices-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
 }
 
 .tools-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
 }
 
 /* Listas */
@@ -508,10 +504,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .cards-grid,
   .commands-grid,
   .practices-grid,
   .tools-grid {
