@@ -291,4 +291,104 @@
                                 <div class="step-number destructive">1</div>
                                 <div class="step-content">
                                     <h4>Identificar o Conflito</h4>
-                                    <p>O Git mostrará
+                                    <p>O Git mostrará uma mensagem de erro indicando arquivos em conflito</p>
+                                    <code>git status</code>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">2</div>
+                                <div class="step-content">
+                                    <h4>Abrir o Arquivo</h4>
+                                    <p>Abra o arquivo conflitante em seu editor. Você verá marcadores como:</p>
+                                    <div class="conflict-example">
+                                        <div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</div>
+                                        <div class="primary-text">Seu código atual</div>
+                                        <div>=======</div>
+                                        <div class="accent-text">Código da outra branch</div>
+                                        <div>&gt;&gt;&gt;&gt;&gt;&gt;&gt; nome-da-branch</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">3</div>
+                                <div class="step-content">
+                                    <h4>Resolver Manualmente</h4>
+                                    <p>Edite o arquivo removendo os marcadores e mantendo o código correto</p>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number destructive">4</div>
+                                <div class="step-content">
+                                    <h4>Marcar como Resolvido</h4>
+                                    <p>Adicione o arquivo resolvido ao staging</p>
+                                    <code>git add nome-do-arquivo</code>
+                                </div>
+                            </div>
+
+                            <div class="conflict-step">
+                                <div class="step-number accent">5</div>
+                                <div class="step-content">
+                                    <h4>Finalizar</h4>
+                                    <p>Complete o merge ou continue o rebase</p>
+                                    <code>git commit</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ferramentas Úteis</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="tools-grid">
+                            <div class="tool-section">
+                                <h5>Comandos Git</h5>
+                                <div class="tool-commands">
+                                    <div class="tool-item">
+                                        <code>git merge --abort</code>
+                                        <p>Cancela o merge</p>
+                                    </div>
+                                    <div class="tool-item">
+                                        <code>git rebase --abort</code>
+                                        <p>Cancela o rebase</p>
+                                    </div>
+                                    <div class="tool-item">
+                                        <code>git diff</code>
+                                        <p>Mostra diferenças</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-section">
+                                <h5>Editores Recomendados</h5>
+                                <ul class="editor-list">
+                                    <li><span class="bullet primary"></span>VS Code (extensão GitLens)</li>
+                                    <li><span class="bullet primary"></span>IntelliJ IDEA</li>
+                                    <li><span class="bullet primary"></span>Sublime Merge</li>
+                                    <li><span class="bullet primary"></span>GitKraken</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Guia educacional sobre Git e GitHub</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>h4>
+
